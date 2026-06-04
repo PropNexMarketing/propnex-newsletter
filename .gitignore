@@ -3,3 +3,6 @@
 *.jpg
 *.jpeg
 untitled folder/
+
+# keep newsletter cover images (used for link previews / og:image)
+!*-Cover.png
