@@ -66,6 +66,27 @@
     .rule-thick { height: 2px; background: var(--ink); border: 0; margin: 0; }
     .rule-cyan { height: 2px; background: var(--cyan); border: 0; margin: 0; width: 56px; }
 
+    /* ===== Top nav (back to home) ===== */
+    .topnav { position: sticky; top: 0; z-index: 50; background: var(--deep); box-shadow: 0 2px 10px rgba(0,86,134,0.18); }
+    .topnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; }
+    .topnav-home {
+      display: inline-flex; align-items: center; gap: 7px;
+      color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px;
+      padding: 7px 14px; border-radius: 9px; background: rgba(255,255,255,0.14);
+      transition: background 0.18s ease;
+    }
+    .topnav-home:hover { background: rgba(255,255,255,0.26); }
+    .topnav-label { color: rgba(255,255,255,0.72); font-size: 12.5px; font-weight: 500; letter-spacing: 0.04em; }
+    /* ===== Back-to-home (bottom) ===== */
+    .backhome { text-align: center; padding: 8px 0 40px; }
+    .backhome a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--deep); text-decoration: none; font-weight: 600; font-size: 15px;
+      padding: 12px 22px; border: 1.5px solid var(--line); border-radius: 12px;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+    .backhome a:hover { border-color: var(--cyan); background: var(--tint); }
+
     /* ===== Masthead ===== */
     .masthead { padding: 24px 0 0; }
     .masthead-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; }
@@ -403,6 +424,14 @@
 </head>
 <body>
 
+  <!-- ===== Top nav: back to home ===== -->
+  <nav class="topnav">
+    <div class="wrap topnav-inner">
+      <a class="topnav-home" href="index.html">← All Issues</a>
+      <span class="topnav-label">PropNex Newsletter</span>
+    </div>
+  </nav>
+
   <div class="wrap">
 
     <!-- ===== Masthead ===== -->
@@ -599,6 +628,13 @@
       <a class="btn btn-fill btn-arrow" href="https://chat.whatsapp.com/DUer4S4nLF4CIIGQB6zUIn?mode=gi_t" target="_blank" rel="noopener">Join the Community</a>
     </div>
   </section>
+
+  <!-- ===== Back to all issues ===== -->
+  <div class="wrap">
+    <div class="backhome">
+      <a href="index.html">← Back to all issues</a>
+    </div>
+  </div>
 
   <!-- ===== Colophon ===== -->
   <div class="wrap">
