@@ -2569,7 +2569,7 @@
   <main>
 
     <!-- ===== Section 3: MARKETING TIPS · The Insider Edge (preserved as-is) ===== -->
-    <section class="tips-section" id="marketing-tips">
+    <section class="tips-section" id="marketing-tips" data-ga-name="Insider Edge">
       <div class="wrap">
         <div class="section-header">
           <span class="section-tag">★ INSIDER EDGE &middot; ISSUE 08</span>
@@ -2847,7 +2847,7 @@
     <!-- ═══════════════════════════════════════════════════════════
          WEBSITE FEATURES — Week 1 Check-in (Issue 08)
          ═══════════════════════════════════════════════════════════ -->
-    <section class="launch-section" id="new-launch">
+    <section class="launch-section" id="new-launch" data-ga-name="New Launch">
       <div class="launch-wrap">
 
         <span class="launch-eyebrow">&#9679; READY FOR NREA</span>
@@ -2925,7 +2925,7 @@
 
 
     <!-- ===== Section 4: PROPTALK (YouTube show promotion) ===== -->
-    <section class="section recruit-section" id="recruitment">
+    <section class="section recruit-section" id="recruitment" data-ga-name="Recruitment / NREA">
       <div class="section-header">
         <span class="section-tag section-tag--gold">&#9679; TOMORROW &middot; NREA 2026</span>
         <h2 class="section-title">Tomorrow, we witness <em>PropNex Malaysia&rsquo;s moment</em> together.</h2>
@@ -2947,7 +2947,7 @@
     <!-- ═══════════════════════════════════════════════════════════
          ALSO THIS WEEK — 4 quick updates in one horizontal scroll
          ═══════════════════════════════════════════════════════════ -->
-    <section class="category-section" id="also-this-week">
+    <section class="category-section" id="also-this-week" data-ga-name="Also This Week">
       <div class="wrap">
         <div class="category-shelf">
           <div class="category-header">
@@ -3251,6 +3251,31 @@
       } else {
         initCardTaps();
       }
+    })();
+  </script>
+
+  <!-- GA4 section view tracking (testing on Issue 08) -->
+  <script>
+    (function () {
+      if (typeof gtag !== 'function') return;
+      var sections = document.querySelectorAll('section[id]');
+      if (!sections.length) return;
+      var issueName = document.title.replace('PropNex Malaysia Newsletter — ', '');
+      var seen = new Set();
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !seen.has(entry.target.id)) {
+            seen.add(entry.target.id);
+            gtag('event', 'section_view', {
+              section_id: entry.target.id,
+              section_name: entry.target.getAttribute('data-ga-name') || entry.target.id,
+              issue: issueName
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '-40% 0px -40% 0px' });
+      sections.forEach(function (s) { observer.observe(s); });
     })();
   </script>
 </body>
