@@ -230,6 +230,14 @@
 </head>
 <body>
 
+  <!-- Shown only when arriving from Issue 19 (?from=19) -->
+  <div id="from19" style="display:none;position:sticky;top:0;z-index:60;background:#005686;box-shadow:0 2px 10px rgba(0,86,134,0.25);text-align:center;padding:10px 16px;">
+    <a href="PropNex-Newsletter-Issue-19.html" style="color:#ffffff;font-weight:700;font-size:14px;text-decoration:none;">&larr; <span class="zh">回到 Issue 19</span><span class="en">Back to Issue 19</span></a>
+  </div>
+  <script>
+    if (/[?&]from=19(&|$)/.test(location.search)) document.getElementById('from19').style.display = 'block';
+  </script>
+
   <!-- ===== Masthead ===== -->
   <header class="mast">
     <div class="wrap">
