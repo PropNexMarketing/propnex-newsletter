@@ -310,6 +310,13 @@
     .dlg .qa p { margin: 0; }
   </style>
 
+<style id="i26lang-css">
+.i26lang-wrap{text-align:center;margin-top:14px}
+.i26lang{display:inline-flex;gap:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
+.i26lang button{font-family:'Noto Sans SC',sans-serif;font-weight:800;font-size:13px;line-height:1;border:none;background:transparent;color:#9fb0e0;padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+html[data-lang="zh"] .i26lang [data-l="zh"],html:not([data-lang]) .i26lang [data-l="zh"]{background:#3ee0ff;color:#10152e}
+html[data-lang="en"] .i26lang [data-l="en"]{background:#3ee0ff;color:#10152e}
+</style>
 </head>
 <body>
   <canvas id="space" aria-hidden="true"></canvas>
@@ -356,7 +363,7 @@
         <p class="hook"><span class="zh">屋主不肯签？买家看完就走？<br><b>这 4 个 Kit 帮你搞定。</b></span><span class="en">Owner won't sign? Buyers walk away?<br><b>These 4 kits have you covered.</b></span></p><p><span class="zh">走进 booth 逛一圈，6 个地方，1 分钟看完。</span><span class="en">Walk the booth: 6 spots, 1 minute.</span></p>
         <button class="start" id="startBtn" type="button">PRESS START ▶</button>
         <small><span class="zh">约 1 分钟</span><span class="en">About 1 minute</span></small>
-        <a class="alt2" id="txtBtn2" href="PropNex-Newsletter-Issue-26-Read.html"><span class="ic">≡</span><span><span class="zh">不想玩？看文字版</span><span class="en">Rather read? Text version</span><small><span class="zh">同样内容，往下滑就能看完</span><span class="en">Same content, just scroll</span></small></span></a>
+        <a class="alt2" id="txtBtn2" href="PropNex-Newsletter-Issue-26-Read.html"><span class="ic">≡</span><span><span class="zh">不想玩？看文字版</span><span class="en">Rather read? Text version</span><small><span class="zh">同样内容，往下滑就能看完</span><span class="en">Same content, just scroll</span></small></span></a><div class="i26lang-wrap"><div class="i26lang" role="group" aria-label="Language"><button type="button" data-l="zh" onclick="setGlobalLang('zh')">中文</button><button type="button" data-l="en" onclick="setGlobalLang('en')">EN</button></div></div>
       </div>
     </div>
   </div>
@@ -438,21 +445,5 @@
       function upd() { a.href = 'https://wa.me/?text=' + encodeURIComponent(msg[LANG]); } upd(); document.getElementById('langBtn').addEventListener('click', upd);
       a.addEventListener('click', function () { upd(); track('whatsapp_share', { issue: 26, lang: LANG }); }); })();
   </script>
-<style>
-#i26-corner{position:fixed;right:14px;bottom:14px;z-index:99999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;font-family:'Poppins',system-ui,sans-serif}
-#i26-textbtn{display:inline-flex;align-items:center;gap:8px;background:#ffcf3c;color:#10203a;font-weight:800;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.45);font-size:16px;animation:i26pulse 2.2s ease-in-out infinite}
-#i26-textbtn:hover{transform:translateY(-2px)}
-@keyframes i26pulse{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.45)}50%{box-shadow:0 10px 34px rgba(255,207,60,.6)}}
-#i26-lang{display:inline-flex;gap:3px;background:rgba(10,18,40,.9);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px}
-#i26-lang button{border:none;background:transparent;color:#cfe3ff;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;font-size:13px;font-family:inherit}
-html[data-lang="zh"] #i26-lang [data-l="zh"],html:not([data-lang]) #i26-lang [data-l="zh"]{background:#00AEEF;color:#fff}
-html[data-lang="en"] #i26-lang [data-l="en"]{background:#00AEEF;color:#fff}
-#hudTxt,#langBtn{display:none!important}
-@media(max-width:640px){#i26-textbtn{padding:12px 18px;font-size:14px}}
-</style>
-<div id="i26-corner">
-  <a id="i26-textbtn" href="PropNex-Newsletter-Issue-26-Read.html"><span>📖</span><span class="zh">看文字版</span><span class="en">Read the text version</span></a>
-  <div id="i26-lang"><button type="button" data-l="zh" onclick="setGlobalLang('zh')">中文</button><button type="button" data-l="en" onclick="setGlobalLang('en')">EN</button></div>
-</div>
 </body>
 </html>
