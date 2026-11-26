@@ -438,5 +438,21 @@
       function upd() { a.href = 'https://wa.me/?text=' + encodeURIComponent(msg[LANG]); } upd(); document.getElementById('langBtn').addEventListener('click', upd);
       a.addEventListener('click', function () { upd(); track('whatsapp_share', { issue: 26, lang: LANG }); }); })();
   </script>
+<style>
+#i26-corner{position:fixed;right:14px;bottom:14px;z-index:99999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;font-family:'Poppins',system-ui,sans-serif}
+#i26-textbtn{display:inline-flex;align-items:center;gap:8px;background:#ffcf3c;color:#10203a;font-weight:800;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.45);font-size:16px;animation:i26pulse 2.2s ease-in-out infinite}
+#i26-textbtn:hover{transform:translateY(-2px)}
+@keyframes i26pulse{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.45)}50%{box-shadow:0 10px 34px rgba(255,207,60,.6)}}
+#i26-lang{display:inline-flex;gap:3px;background:rgba(10,18,40,.9);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px}
+#i26-lang button{border:none;background:transparent;color:#cfe3ff;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;font-size:13px;font-family:inherit}
+html[data-lang="zh"] #i26-lang [data-l="zh"],html:not([data-lang]) #i26-lang [data-l="zh"]{background:#00AEEF;color:#fff}
+html[data-lang="en"] #i26-lang [data-l="en"]{background:#00AEEF;color:#fff}
+#hudTxt,#langBtn{display:none!important}
+@media(max-width:640px){#i26-textbtn{padding:12px 18px;font-size:14px}}
+</style>
+<div id="i26-corner">
+  <a id="i26-textbtn" href="PropNex-Newsletter-Issue-26-Read.html"><span>📖</span><span class="zh">看文字版</span><span class="en">Read the text version</span></a>
+  <div id="i26-lang"><button type="button" data-l="zh" onclick="setGlobalLang('zh')">中文</button><button type="button" data-l="en" onclick="setGlobalLang('en')">EN</button></div>
+</div>
 </body>
 </html>
