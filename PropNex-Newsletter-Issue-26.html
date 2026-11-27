@@ -320,8 +320,15 @@ html[data-lang="en"] .i26lang [data-l="en"]{background:#3ee0ff;color:#10152e}
 #hudTxt,#langBtn{display:none!important}
 /* reduce "many steps" feeling: hide the 0/6 step counter in the HUD */
 .prog{display:none!important}
+    #hudBuy{margin-left:auto!important}
 /* fewer steps: keep the 4 Kits, hide Q&A + ticket booths */
 .h-npc,.h-tix{display:none!important}
+/* fix: top kit row was overlapping the booth caption. shrink cards, lower rows, tuck the caption under the banner */
+.h-kit{width:19%!important}
+.k1,.k3{top:41%!important}
+.k2,.k4{top:65%!important}
+.h-screen{top:16%!important;width:56%!important}
+.h-screen .lbl{position:absolute!important;left:50%!important;right:auto!important;transform:translateX(-50%);bottom:-1.9em!important;white-space:nowrap;background:rgba(5,8,26,.9);padding:3px 8px;border:2px solid var(--cyan);z-index:6}
 </style>
 </head>
 <body>
